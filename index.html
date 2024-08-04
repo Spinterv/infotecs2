@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/main.css"/>
+	<title>ToDo приложение</title>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="display-4 mb-2">ToDo приложение</div>
+		<div class="h4 mb-5">список задач на сегодня</div>
+
+		<!-- List of tasks -->
+		<div class="card mb-4">
+			<ul id="tasksList" class="list-group list-group-flush">
+
+			</ul>
+		</div>
+		<!-- //List of tasks -->
+		
+		<div style="margin-bottom: 1.5rem !important; display: grid; align-items: center;">
+			<!-- Кнопки фильтрации -->
+			<button class="btn " id="all-tasks">Все задачи</button>
+			<button class="btn" id="completed-tasks">Завершенные задачи</button>
+			<button class="btn" id="uncompleted-tasks">Незавершенные задачи</button>
+
+			<!-- Кнопки сортировки -->
+			<button class="btn" id="sort-by-date">Сортировать по дате завершения</button>
+		</div>
+
+		<!-- Form -->
+		<div class="card bg-light" >
+			<div class="card-header">Добавить новую задачу</div>
+			<div class="card-body">
+				<form id="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="taskTitle" placeholder="Заголовок задачи" required>
+						<textarea type="text" class="form-control" id="taskText" placeholder="Описание задачи"></textarea>
+						<input type="date" class="form-control" id="taskDate" placeholder="Дата завершения" required>
+						<small id="emailHelp" class="form-text text-muted">Дата планируемого завершения. Всегда можно исправить ;)</small>
+					</div>
+					<button type="submit" class="btn btn-primary  btn-lg active">Добавить</button>
+				</form>
+			</div>
+		</div>
+		<!-- //Form  -->
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
