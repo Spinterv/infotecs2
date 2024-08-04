@@ -213,7 +213,7 @@ function openModalForEditing(taskTitle, taskText, taskDate, parentNode, id) {
 	tasks[index].date = newTaskDate;
 	
     // Обновляем текст задачи в элементе списка
-    parentNode.querySelector('.task-title').textContent = `${newTaskTitle}, ${newTaskDate}`;
+    parentNode.querySelector('.task-title').textContent = `${newTaskTitle}, ${newTaskDate}, ${newTaskText}`;
 
     // Сохраняем список задач в хранилище браузера localStorage
     saveToLocalStorage();
@@ -312,11 +312,13 @@ function saveToLocalStorage() {
 function renderTask(task) {
 	// Формируем CSS класс
 	const cssClass = task.done ? 'task-title task-title--done' : 'task-title';
-
+	if (task.text === ""){
+		task.text = 'Вы не написали текст. Либо просто ничего не надо делать)';
+	}
 	// Формируем разметку для новой задачи
 	const taskHTML = `
                 <li id="${task.id}" class="list-group-item d-flex justify-content-between task-item">
-					<span class="${cssClass}">${task.title}, ${task.date}</span>
+					<span style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="${cssClass}">${task.title}, ${task.date}, ${task.text} </span>
 					<div class="task-item__buttons">
 						<button type="button" data-action="done" class="btn-action">
 							<img src="./img/tick.svg" alt="Done" width="18" height="18">
